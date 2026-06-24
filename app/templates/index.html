@@ -44,8 +44,9 @@
     <div class="h-1.5 w-full bg-gradient-to-r from-brandEmerald via-cyan-500 to-brandBlue"></div>
 
     <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center border-b border-gray-800">
-        <div class="flex items-center gap-3">
-            <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Logo (Now acts as a clickable Home link) -->
+        <a href="/" class="flex items-center gap-3 group">
+            <svg class="w-8 h-8 group-hover:scale-105 transition-transform" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 20C10 14.4772 14.4772 10 20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30H10V20Z" fill="url(#paint0_linear)"/>
                 <path d="M30 20C30 25.5228 25.5228 30 20 30C14.4772 30 10 25.5228 10 20H30Z" fill="#030712" fill-opacity="0.3"/>
                 <circle cx="26" cy="14" r="4" fill="#3b82f6"/>
@@ -59,14 +60,33 @@
             <div class="text-2xl font-black tracking-tight text-white">
                 BulkMsgs<span class="text-transparent bg-clip-text bg-gradient-to-r from-brandEmerald to-cyan-500">.com</span>
             </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+            
+            <!-- Services Dropdown Menu -->
+            <div class="relative group py-2">
+                <button class="hover:text-white transition flex items-center gap-1.5 focus:outline-none">
+                    Our Services
+                    <svg class="w-4 h-4 text-gray-500 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                
+                <!-- Dropdown Links -->
+                <div class="absolute top-full left-0 w-56 bg-cardBg border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+                    <a href="/whatsapp-business-api" class="block px-4 py-3 hover:bg-gray-800 hover:text-brandEmerald transition border-b border-gray-800/50">WhatsApp Meta API</a>
+                    <a href="/rcs-messaging-services" class="block px-4 py-3 hover:bg-gray-800 hover:text-brandBlue transition border-b border-gray-800/50">RCS Messaging</a>
+                    <a href="/bulk-sms-otp-gateway" class="block px-4 py-3 hover:bg-gray-800 hover:text-gray-200 transition border-b border-gray-800/50">Bulk SMS & OTP</a>
+                    <a href="/voice-broadcasting-obd" class="block px-4 py-3 hover:bg-gray-800 hover:text-purple-400 transition">Voice Broadcasting</a>
+                </div>
+            </div>
+
+            <!-- Absolute paths added to ensure they work from sub-pages -->
+            <a href="/#preview-studio" class="hover:text-white transition">AI Studio</a>
+            <a href="/#pricing" class="hover:text-white transition">Wholesale Pricing</a>
         </div>
 
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-            <a href="#services" class="hover:text-white transition">Our Services</a>
-            <a href="#preview-studio" class="hover:text-white transition">AI Studio</a>
-            <a href="#pricing" class="hover:text-white transition">Wholesale Pricing</a>
-        </div>
-        <a href="#lead-form" class="bg-white text-darkBg font-bold text-sm px-6 py-2.5 rounded-full hover:bg-gray-200 transition">Get API Key</a>
+        <a href="/#lead-form" class="bg-white text-darkBg font-bold text-sm px-6 py-2.5 rounded-full hover:bg-gray-200 transition shadow-[0_0_15px_rgba(255,255,255,0.05)]">Get API Key</a>
     </nav>
 
     <section class="max-w-7xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-12 gap-12 items-center">
@@ -244,8 +264,21 @@
         </div>
     </section>
 
-    <footer class="border-t border-gray-900 bg-black/40 text-center py-8 text-xs text-gray-600">
-        &copy; 2026 BulkMsgs.com | Compliant with TRAI/DLT and Meta Business Guidelines.
+    <footer class="border-t border-gray-900 bg-black/40 py-12 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 mb-8 text-sm">
+            <div>
+                <h4 class="text-white font-bold mb-4">Platform Solutions</h4>
+                <ul class="space-y-2 text-gray-500">
+                    <li><a href="/whatsapp-business-api" class="hover:text-brandEmerald transition">WhatsApp Meta API</a></li>
+                    <li><a href="/rcs-messaging-services" class="hover:text-brandBlue transition">RCS Business Messaging</a></li>
+                    <li><a href="/bulk-sms-otp-gateway" class="hover:text-white transition">Bulk SMS & OTP</a></li>
+                    <li><a href="/voice-broadcasting-obd" class="hover:text-purple-400 transition">Voice Broadcasting</a></li>
+                </ul>
+            </div>
+            </div>
+        <div class="text-center text-xs text-gray-600 pt-8 border-t border-gray-900">
+            &copy; 2026 BulkMsgs.com | Compliant with TRAI/DLT and Meta Business Guidelines.
+        </div>
     </footer>
 
 </body>

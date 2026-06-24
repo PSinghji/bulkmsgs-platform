@@ -20,6 +20,24 @@ async def index_page(request: Request):
         {"request": request, "pricing_groups": pricing_data}
     )
 
+# --- SEO Landing Page Routes ---
+
+@app.get("/whatsapp-business-api", response_class=HTMLResponse)
+async def whatsapp_page(request: Request):
+    return templates.TemplateResponse("whatsapp.html", {"request": request})
+
+@app.get("/rcs-messaging-services", response_class=HTMLResponse)
+async def rcs_page(request: Request):
+    return templates.TemplateResponse("rcs.html", {"request": request})
+
+@app.get("/bulk-sms-otp-gateway", response_class=HTMLResponse)
+async def sms_page(request: Request):
+    return templates.TemplateResponse("sms.html", {"request": request})
+
+@app.get("/voice-broadcasting-obd", response_class=HTMLResponse)
+async def voice_page(request: Request):
+    return templates.TemplateResponse("voice.html", {"request": request})
+
 @app.post("/submit-lead")
 async def handle_lead(
     name: str = Form(...),
