@@ -19,6 +19,6 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd /var/www/bulkmsgs-platform || mkdir -p /var/www/bulkmsgs-platform && cd /var/www/bulkmsgs-platform
-          # Pull latest commit updates via secure deployment token channels
           git pull origin main
-          docker-compose up --build -d
+          docker compose down
+          docker compose up --build -d
