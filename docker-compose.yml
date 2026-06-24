@@ -4,7 +4,7 @@ services:
   web:
     build: .
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8085:8000"  # Binds ONLY to localhost port 8085, invisible to the outside world
     environment:
       - MONGO_URL=mongodb://mongo_db:27017
     depends_on:
@@ -13,7 +13,7 @@ services:
   mongo_db:
     image: mongo:6.0
     ports:
-      - "27017:27017"
+      - "127.0.0.1:27017:27017" # Binds mongo securely to localhost only
     volumes:
       - mongo_data:/data/db
 
