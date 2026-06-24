@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, Form, status
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from database import pricing_collection, leads_collection
+from app.database import pricing_collection, leads_collection
 
 app = FastAPI(title="BulkMsgs AI Platform")
 

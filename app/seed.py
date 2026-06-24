@@ -1,5 +1,5 @@
 import asyncio
-from database import pricing_collection
+from app.database import pricing_collection
 
 async def seed_data():
     # Clear existing to prevent duplicates
