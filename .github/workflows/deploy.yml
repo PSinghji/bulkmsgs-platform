@@ -1,0 +1,24 @@
+name: Deploy Application Bundle
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Deploy Cluster Configuration via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        script: |
+          cd /var/www/bulkmsgs-platform || mkdir -p /var/www/bulkmsgs-platform && cd /var/www/bulkmsgs-platform
+          # Pull latest commit updates via secure deployment token channels
+          git pull origin main
+          docker-compose up --build -d
